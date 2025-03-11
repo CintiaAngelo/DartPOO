@@ -1,5 +1,30 @@
-import 'package:cintiac/cintiac.dart' as cintiac;
+void main() {
+  var aluno = Aluno("Cintia", 20, 9.0);
+  
+  var aluno2 = Aluno.ganhadorChallenge("Victor", 21);
 
-void main(List<String> arguments) {
-  print('Hello world: ${cintiac.calculate()}!');
+  aluno.exibirInformacoes();
+  aluno2.exibirInformacoes();
+}
+
+class Aluno {
+  String? nome;
+  int? idade;
+  double? nota;
+
+  //constructor
+
+  Aluno(String this.nome, int this.idade, double this.nota);
+
+  Aluno.ganhadorChallenge(String this.nome, int this.idade) {
+    nota = 10;
+  }
+
+    
+
+  void exibirInformacoes() {
+    print("Nome do aluno: $nome.");
+    print("Idade do aluno: $idade anos.");
+    print("Nota do aluno: $nota.");
+  }
 }
